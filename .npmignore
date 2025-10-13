@@ -1,0 +1,43 @@
+# Source files
+*.ts
+!dist/**/*.js
+
+# Development files
+.git
+.github
+.gitignore
+*.md
+!README.md
+
+# Build artifacts (except dist)
+out
+coverage
+*.lcov
+
+# Dependencies
+node_modules
+bun.lock
+
+# IDE files
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+report.*.json
+
+# Environment files
+.env*
+!.env.example
+
+# Cache
+.cache
+*.tsbuildinfo
+.eslintcache

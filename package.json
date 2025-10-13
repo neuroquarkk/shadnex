@@ -1,11 +1,41 @@
 {
-  "name": "next-shadcn",
+  "name": "create-next-shadcn",
+  "version": "1.0.0",
+  "description": "The ultimate CLI for creating Next.js applications with Shadcn UI",
+  "main": "index.ts",
   "bin": {
-  "create-next-shadcn": "./cli.ts"
-},
+    "create-next-shadcn": "./dist/cli.js"
+  },
   "module": "index.ts",
   "type": "module",
-  "private": true,
+  "keywords": [
+    "nextjs",
+    "shadcn",
+    "cli",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "create-next-app",
+    "ui-components"
+  ],
+  "author": "Vedant Lavale <vedantlavale@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vedantlavale/create-next-shadcn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vedantlavale/create-next-shadcn/issues"
+  },
+  "homepage": "https://github.com/vedantlavale/create-next-shadcn#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "bun build cli.ts --outdir ./dist --target node",
+    "dev": "bun run cli.ts",
+    "prepublishOnly": "bun run build"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },

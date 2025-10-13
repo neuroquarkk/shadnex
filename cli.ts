@@ -1,7 +1,7 @@
-#!/usr/bin/env bun
+#!/usr/bin/env node
 
 import prompts from "prompts";
-import { spawnSync } from "bun";
+import { spawnSync } from "child_process";
 import kleur from "kleur";
 
 // Handle Ctrl+C gracefully
@@ -15,15 +15,14 @@ process.on('SIGTERM', () => process.exit(0));
 
 // Utility for running commands
 function run(cmd: string, args: string[], cwd?: string) {
-  const result = spawnSync([cmd, ...args], {
+  const result = spawnSync(cmd, args, {
     cwd,
-    stdin: 'inherit',
-    stdout: 'inherit',
-    stderr: 'inherit',
+    stdio: 'inherit',
+    shell: true,
   });
-  
-  if (result.exitCode !== 0) {
-    throw new Error(`Command failed with exit code ${result.exitCode}`);
+
+  if (result.status !== 0) {
+    throw new Error(`Command failed with exit code ${result.status}`);
   }
 }
 
