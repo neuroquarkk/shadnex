@@ -30,13 +30,16 @@ function run(cmd: string, args: string[], cwd?: string) {
 // Utility to create a box around text
 function createBox(message: string) {
   const lines = message.split('\n');
-  const maxLength = Math.max(...lines.map(line => line.length));
+  const maxLength = Math.max(...lines.map(line => {
+    // Strip ANSI codes for length calculation
+    return line.replace(/\u001b\[[0-9;]*m/g, '').length;
+  }));
   const horizontalBorder = '─'.repeat(maxLength + 2);
   
   const box = [
-    `┌${horizontalBorder}┐`,
-    ...lines.map(line => `│ ${line.padEnd(maxLength)} │`),
-    `└${horizontalBorder}┘`
+    `╭${horizontalBorder}╮`,
+    ...lines.map(line => `│ ${line.padEnd(maxLength + (line.length - line.replace(/\u001b\[[0-9;]*m/g, '').length))} │`),
+    `╰${horizontalBorder}╯`
   ];
   
   return box.join('\n');
@@ -199,7 +202,6 @@ async function main() {
           { title: 'npm (npx shadcn@latest init)', value: 'npm' },
           { title: 'yarn (yarn dlx shadcn@latest init)', value: 'yarn' },
           { title: 'pnpm (pnpm dlx shadcn@latest init)', value: 'pnpm' },
-          { title: 'bun (bunx --bun shadcn@latest init)', value: 'bun' },
         ],
         initial: 0,
       }, {
@@ -252,13 +254,9 @@ async function main() {
         run('pnpm', ['dlx', 'shadcn@latest', 'init']);
       } else if (packageManager === 'yarn') {
         run('yarn', ['dlx', 'shadcn@latest', 'init']);
-      } else if (packageManager === 'bun') {
-        run('bunx', ['--bun', 'shadcn@latest', 'init']);
       } else {
         run('npx', ['shadcn@latest', 'init']);
       }
-      
-      console.log('\nShadcn UI installed successfully!\n');
     } catch (error) {
       // Clear some space and show user-friendly message without error details
       console.log('\n\n\n\n');
@@ -268,20 +266,30 @@ async function main() {
       console.log(`   cd ${response.projectName}`);
       
       if (packageManager === 'pnpm') {
-        console.log(`   pnpm dlx shadcn@latest init\n`);
+        console.log(`   pnpm dlx shadcn@latest init`);
       } else if (packageManager === 'yarn') {
-        console.log(`   yarn dlx shadcn@latest init\n`);
-      } else if (packageManager === 'bun') {
-        console.log(`   bunx --bun shadcn@latest init\n`);
+        console.log(`   yarn dlx shadcn@latest init`);
       } else {
-        console.log(`   npx shadcn@latest init\n`);
+        console.log(`   npx shadcn@latest init`);
       }
     }
   }
   
-  // Display success message in a box
-  const successMessage = createBox('All done! Happy coding!');
-  console.log('\n' + kleur.green(successMessage) + '\n');
+  // Display success message with useful information
+  const successMessage = createBox(
+    `${kleur.bold().green('Success!')} Your Next.js app is ready.\n\n` +
+    `🚀 ${kleur.bold('Quick start')}:\n` +
+    `   ${kleur.cyan(`cd ${response.projectName}`)}\n` +
+    `   ${kleur.cyan(`${packageManager} run dev`)}\n\n` +
+    `📚 ${kleur.bold('Resources')}:\n` +
+    `   Shadcn UI: ${kleur.underline('https://ui.shadcn.com')}\n` +
+    `   Next.js Docs: ${kleur.underline('https://nextjs.org/docs')}\n\n` +
+    `⭐ ${kleur.bold('Star us on GitHub')}:\n` +
+    `   ${kleur.underline('https://github.com/vedantlavale/create-next-shadcn')}\n\n` +
+    `🎨 ${kleur.bold('Add components')}:\n` +
+    `   ${kleur.cyan('npx shadcn-ui@latest add [component-name]')}`
+  );
+  console.log('\n' + successMessage + '\n');
 }
 
 main();
