@@ -1,13 +1,13 @@
 # Contributing to create-next-shadcn
 
-Thank you for your interest in contributing to `create-next-shadcn`! We welcome contributions from the community.
+Thank you for your interest in contributing to `create-next-shadcn-cli`! We welcome contributions from the community.
 
 ## 🚀 Quick Start
 
 1. **Fork** the repository on GitHub
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/your-username/create-next-shadcn.git
+   git clone https://github.com/vedantlavale/create-next-shadcn.git
    cd create-next-shadcn
    ```
 3. **Install dependencies**:
@@ -141,4 +141,4 @@ If you need help:
 - 💬 **GitHub Discussions**: Ask questions in our discussions
 - 🐛 **Issues**: Report bugs or request features
 
-Thank you for contributing to `create-next-shadcn`! 🎉
+Thank you for contributing to `create-next-shadcn-cli`! 🎉

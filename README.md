@@ -2,7 +2,11 @@
 
 <div align="center">
 
-
+[![npm version](https://img.shields.io/npm/v/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
+[![npm downloads](https://img.shields.io/npm/dm/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
+![GitHub stars](https://img.shields.io/github/stars/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn)
+![GitHub issues](https://img.shields.io/github/issues/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn/issues)
+<br>
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-FBF0DF?style=for-the-badge&logo=bun&logoColor=000000)
 
@@ -16,35 +20,56 @@
 
 `create-next-shadcn` is an interactive CLI tool that streamlines the process of setting up modern Next.js applications with Shadcn UI. It combines the power of Next.js with the beauty of Shadcn UI components, providing a seamless development experience from project initialization to component installation.
 
+## 🚀 Quick Start
+
+```bash
+# Create a new Next.js project with Shadcn UI
+npx create-next-shadcn-cli@latest
+
+# Or install globally first
+npm install -g create-next-shadcn-cli
+create-next-shadcn
+```
+
 ## 🚀 Features
 
-- **🎯 Interactive Setup**: Guided prompts for all configuration options
-- **⚡ Modern Stack**: Next.js 14+ with App Router and Turbopack support
-- **🎨 Shadcn UI Integration**: Automatic installation and configuration
-- **🔧 Flexible Configuration**: TypeScript, ESLint, Tailwind CSS, and more
-- **📦 Package Manager Support**: npm, yarn, and pnpm
-- **🎭 Beautiful Terminal UI**: Colorful, boxed output with clear instructions
-- **🛡️ Error Handling**: Graceful cancellation and error recovery
+- **🎯 Interactive Setup** - Guided prompts for all configuration options
+- **⚡ Modern Stack** - Next.js 14+ with App Router and Turbopack support
+- **🎨 Shadcn UI Integration** - Automatic installation and configuration
+- **🔧 Flexible Configuration** - TypeScript, ESLint, Tailwind CSS, and more
+- **📦 Package Manager Support** - npm, yarn, and pnpm
+- **🎭 Beautiful Terminal UI** - Colorful, boxed output with clear instructions
+- **🛡️ Error Handling** - Graceful cancellation and error recovery
 
 ## 📦 Installation
 
-### Global Installation (Recommended)
+### Using npx (Recommended - No Installation Required)
+
+```bash
+npx create-next-shadcn-cli@latest
+```
+
+### Global Installation
+
+Install globally to use the `create-next-shadcn` command anywhere:
 
 ```bash
 # Using npm
-npm install -g create-next-shadcn
+npm install -g create-next-shadcn-cli
 
 # Using yarn
-yarn global add create-next-shadcn
+yarn global add create-next-shadcn-cli
 
 # Using pnpm
-pnpm add -g create-next-shadcn
+pnpm add -g create-next-shadcn-cli
 
 # Using bun
-bun add -g create-next-shadcn
+bun add -g create-next-shadcn-cli
 ```
 
 ### Local Installation
+
+For development or testing:
 
 ```bash
 # Clone the repository
@@ -54,8 +79,8 @@ cd create-next-shadcn
 # Install dependencies
 bun install
 
-# Make executable
-chmod +x cli.ts
+# Run locally
+bun run cli.ts
 ```
 
 ## 🛠️ Usage
@@ -63,30 +88,30 @@ chmod +x cli.ts
 ### Basic Usage
 
 ```bash
-# Run globally (after installation)
+# Using npx (recommended - no installation needed)
+npx create-next-shadcn-cli@latest
+
+# After global installation
 create-next-shadcn
 
-# Run locally
+# Local development
 bun run cli.ts
-
-# Or directly with bun
-bun cli.ts
 ```
 
 ### Interactive Setup
 
 The CLI will guide you through a series of questions to configure your project:
 
-1. **Project Name**: Enter your desired project name
-2. **TypeScript**: Choose whether to use TypeScript (recommended)
-3. **ESLint**: Enable ESLint for code quality
-4. **Tailwind CSS**: Include Tailwind CSS for styling
-5. **Source Directory**: Choose between `src/` or root directory structure
-6. **App Router**: Use Next.js 13+ App Router (recommended)
-7. **Turbopack**: Enable Turbopack for faster builds
-8. **Import Alias**: Customize the import alias (default: `@/*`)
-9. **Shadcn UI**: Install and configure Shadcn UI (requires Tailwind)
-10. **Package Manager**: Choose package manager for Shadcn installation
+1. **Project Name** - Enter your desired project name
+2. **TypeScript** - Choose whether to use TypeScript (recommended)
+3. **ESLint** - Enable ESLint for code quality
+4. **Tailwind CSS** - Include Tailwind CSS for styling
+5. **Source Directory** - Choose between `src/` or root directory structure
+6. **App Router** - Use Next.js 13+ App Router (recommended)
+7. **Turbopack** - Enable Turbopack for faster builds
+8. **Import Alias** - Customize the import alias (default: `@/*`)
+9. **Shadcn UI** - Install and configure Shadcn UI (requires Tailwind)
+10. **Package Manager** - Choose package manager for Shadcn installation
 
 ### Example Output
 
@@ -135,7 +160,7 @@ Yes
 
 ## 📁 Project Structure
 
-After running `create-next-shadcn`, you'll get a fully configured Next.js project:
+After running `npx create-next-shadcn-cli@latest` or `create-next-shadcn`, you'll get a fully configured Next.js project:
 
 ```
 my-awesome-app/
@@ -197,11 +222,10 @@ bun run index.ts
 ### Building
 
 ```bash
-# Build the project
+# Build the project for distribution
 bun run build
 
-# Create executable
-bun build cli.ts --outdir ./dist
+# The built CLI will be in ./dist/cli.js
 ```
 
 ## 🤝 Contributing
@@ -245,6 +269,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ by [Vedant](https://github.com/vedantlavale)**
 
-⭐ Star us on GitHub • 📖 Read the docs • 🚀 Get started
+[![npm](https://img.shields.io/npm/v/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
+[![GitHub](https://img.shields.io/github/stars/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn)
+
+[⭐ Star on GitHub](https://github.com/vedantlavale/create-next-shadcn) • [📦 Install from npm](https://www.npmjs.com/package/create-next-shadcn-cli) • [🚀 Get started](#-installation)
 
 </div>
