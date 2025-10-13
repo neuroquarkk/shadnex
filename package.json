@@ -1,5 +1,5 @@
 {
-  "name": "create-next-shadcn",
+  "name": "create-next-shadcn-cli",
   "version": "1.0.0",
   "description": "The ultimate CLI for creating Next.js applications with Shadcn UI",
   "main": "index.ts",
