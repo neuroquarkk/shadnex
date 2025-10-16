@@ -1,6 +1,6 @@
 {
-  "name": "create-next-shadcn-cli",
-  "version": "1.0.2",
+  "name": "shadnex",
+  "version": "1.0.3",
   "description": "The ultimate CLI for creating Next.js applications with Shadcn UI",
   "main": "index.ts",
   "bin": {
