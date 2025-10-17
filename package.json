@@ -1,6 +1,6 @@
 {
   "name": "shadnex",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The ultimate CLI for creating Next.js applications with Shadcn UI",
   "main": "index.ts",
   "bin": {
@@ -22,12 +22,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vedantlavale/create-next-shadcn.git"
+    "url": "https://github.com/vedantlavale/shadnex.git"
   },
   "bugs": {
-    "url": "https://github.com/vedantlavale/create-next-shadcn/issues"
+    "url": "https://github.com/vedantlavale/shadnex/issues"
   },
-  "homepage": "https://github.com/vedantlavale/create-next-shadcn#readme",
+  "homepage": "https://github.com/vedantlavale/shadnex#readme",
   "engines": {
     "node": ">=18.0.0"
   },

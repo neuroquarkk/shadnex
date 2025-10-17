@@ -316,7 +316,7 @@ async function main() {
     `   Shadcn UI: ${kleur.underline('https://ui.shadcn.com')}\n` +
     `   Next.js Docs: ${kleur.underline('https://nextjs.org/docs')}\n\n` +
     `⭐ ${kleur.bold('Star us on GitHub')}:\n` +
-    `   ${kleur.underline('https://github.com/vedantlavale/create-next-shadcn')}\n\n` +
+    `   ${kleur.underline('https://github.com/vedantlavale/shadnex')}\n\n` +
     `🎨 ${kleur.bold('Add components')}:\n` +
     `   ${kleur.cyan(getShadcnAddCommand(packageManager))}`
   );

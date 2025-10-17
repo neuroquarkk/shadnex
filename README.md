@@ -2,10 +2,10 @@
 
 <div align="center">
 
-[![npm version](https://img.shields.io/npm/v/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
-[![npm downloads](https://img.shields.io/npm/dm/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
-![GitHub stars](https://img.shields.io/github/stars/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn)
-![GitHub issues](https://img.shields.io/github/issues/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn/issues)
+[![npm version](https://img.shields.io/npm/v/shadnex.svg)](https://www.npmjs.com/package/shadnex)
+[![npm downloads](https://img.shields.io/npm/dm/shadnex.svg)](https://www.npmjs.com/package/shadnex)
+![GitHub stars](https://img.shields.io/github/stars/vedantlavale/shadnex.svg)](https://github.com/vedantlavale/shadnex)
+![GitHub issues](https://img.shields.io/github/issues/vedantlavale/shadnex.svg)](https://github.com/vedantlavale/shadnex/issues)
 <br>
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-FBF0DF?style=for-the-badge&logo=bun&logoColor=000000)
@@ -18,7 +18,7 @@
 
 ## ✨ Overview
 
-`create-next-shadcn` is an interactive CLI tool that streamlines the process of setting up modern Next.js applications with Shadcn UI. It combines the power of Next.js with the beauty of Shadcn UI components, providing a seamless development experience from project initialization to component installation.
+`shadnex` is an interactive CLI tool that streamlines the process of setting up modern Next.js applications with Shadcn UI. It combines the power of Next.js with the beauty of Shadcn UI components, providing a seamless development experience from project initialization to component installation.
 
 ## 🚀 Quick Start
 
@@ -26,8 +26,8 @@
 # Create a new Next.js project with Shadnex (no install required)
 npx shadnex@latest
 
-# Or install globally first (package name remains create-next-shadcn-cli)
-npm install -g create-next-shadcn-cli
+# Or install globally first
+npm install -g shadnex
 shadnex
 ```
 
@@ -51,20 +51,20 @@ npx shadnex@latest
 
 ### Global Installation
 
-Install globally to use the `shadnex` command anywhere (the package name is `create-next-shadcn-cli`):
+Install globally to use the `shadnex` command anywhere:
 
 ```bash
 # Using npm
-npm install -g create-next-shadcn-cli
+npm install -g shadnex
 
 # Using yarn
-yarn global add create-next-shadcn-cli
+yarn global add shadnex
 
 # Using pnpm
-pnpm add -g create-next-shadcn-cli
+pnpm add -g shadnex
 
 # Using bun
-bun add -g create-next-shadcn-cli
+bun add -g shadnex
 ```
 
 ### Local Installation
@@ -73,8 +73,8 @@ For development or testing:
 
 ```bash
 # Clone the repository
-git clone https://github.com/vedantlavale/create-next-shadcn.git
-cd create-next-shadcn
+git clone https://github.com/vedantlavale/shadnex.git
+cd shadnex
 
 # Install dependencies
 bun install
@@ -206,8 +206,8 @@ npx shadcn-ui@latest add button card input
 
 ```bash
 # Clone the repository
-git clone https://github.com/vedantlavale/create-next-shadcn.git
-cd create-next-shadcn
+git clone https://github.com/vedantlavale/shadnex.git
+cd shadnex
 
 # Install dependencies
 bun install
@@ -235,7 +235,7 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 ### Development Setup
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/create-next-shadcn.git`
+2. Clone your fork: `git clone https://github.com/your-username/shadnex.git`
 3. Install dependencies: `bun install`
 4. Make your changes
 5. Test your changes: `bun run cli.ts`
@@ -243,9 +243,9 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ### Issues and Feature Requests
 
-- 🐛 [Bug Reports](https://github.com/vedantlavale/create-next-shadcn/issues/new?template=bug_report.md)
-- 💡 [Feature Requests](https://github.com/vedantlavale/create-next-shadcn/issues/new?template=feature_request.md)
-- ❓ [Questions](https://github.com/vedantlavale/create-next-shadcn/discussions)
+- 🐛 [Bug Reports](https://github.com/vedantlavale/shadnex/issues/new?template=bug_report.md)
+- 💡 [Feature Requests](https://github.com/vedantlavale/shadnex/issues/new?template=feature_request.md)
+- ❓ [Questions](https://github.com/vedantlavale/shadnex/discussions)
 
 ## 📄 License
 
@@ -269,9 +269,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ by [Vedant](https://github.com/vedantlavale)**
 
-[![npm](https://img.shields.io/npm/v/create-next-shadcn-cli.svg)](https://www.npmjs.com/package/create-next-shadcn-cli)
-[![GitHub](https://img.shields.io/github/stars/vedantlavale/create-next-shadcn.svg)](https://github.com/vedantlavale/create-next-shadcn)
+[![npm](https://img.shields.io/npm/v/shadnex.svg)](https://www.npmjs.com/package/shadnex)
+[![GitHub](https://img.shields.io/github/stars/vedantlavale/shadnex.svg)](https://github.com/vedantlavale/shadnex)
 
-[⭐ Star on GitHub](https://github.com/vedantlavale/create-next-shadcn) • [📦 Install from npm](https://www.npmjs.com/package/create-next-shadcn-cli) • [🚀 Get started](#-installation)
+[⭐ Star on GitHub](https://github.com/vedantlavale/shadnex) • [📦 Install from npm](https://www.npmjs.com/package/shadnex) • [🚀 Get started](#-installation)
 
 </div>
