@@ -1,12 +1,12 @@
 {
   "name": "shadnex",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "The ultimate CLI for creating Next.js applications with Shadcn UI",
-  "main": "index.ts",
+  "main": "dist/cli.js",
   "bin": {
     "shadnex": "./dist/cli.js"
   },
-  "module": "index.ts",
+  "module": "dist/cli.js",
   "type": "module",
   "keywords": [
     "nextjs",
@@ -32,8 +32,8 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "bun build cli.ts --outdir ./dist --target node",
-    "dev": "bun run cli.ts",
+    "build": "bun build src/cli.ts --outdir ./dist --target node",
+    "dev": "bun run src/cli.ts",
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {
@@ -45,6 +45,8 @@
   "dependencies": {
     "@types/prompts": "^2.4.9",
     "kleur": "^4.1.5",
-    "prompts": "^2.4.2"
+    "oh-my-logo": "^0.4.0",
+    "prompts": "^2.4.2",
+    "react-devtools-core": "^7.0.1"
   }
 }

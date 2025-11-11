@@ -1,13 +1,20 @@
-# Source files
+# Source files (will be in dist)
+src/
 *.ts
-!dist/**/*.js
+tsconfig.json
+
+# Old root files (deprecated)
+cli.ts
+index.ts
 
 # Development files
 .git
 .github
 .gitignore
+.cursor
 *.md
 !README.md
+CONTRIBUTING.md
 
 # Build artifacts (except dist)
 out

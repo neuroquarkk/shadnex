@@ -33,12 +33,13 @@ shadnex
 
 ## 🚀 Features
 
-- **🎯 Interactive Setup** - Guided prompts for all configuration options
+- **� Beautiful ASCII Logo** - Eye-catching gradient logo on startup
+- **◆ Stylish Bullet Points** - Clean, modern UI with diamond bullet points
+- **�🎯 Interactive Setup** - Guided prompts for all configuration options
 - **⚡ Modern Stack** - Next.js 14+ with App Router and Turbopack support
 - **🎨 Shadcn UI Integration** - Automatic installation and configuration
 - **🔧 Flexible Configuration** - TypeScript, ESLint, Tailwind CSS, and more
 - **📦 Package Manager Support** - npm, yarn, pnpm, and bun
-- **🎭 Beautiful Terminal UI** - Colorful, boxed output with clear instructions
 - **🛡️ Error Handling** - Graceful cancellation and error recovery
 
 ## 📦 Installation
