@@ -4,6 +4,7 @@ import kleur from "kleur";
 import type { ProjectConfig } from './types';
 import { run } from './utils/commands';
 import { createBox } from './utils/ui';
+import { displayLogo } from './utils/logo';
 import { 
   getShadcnAddCommand, 
   getShadcnInitCommand,
@@ -32,6 +33,9 @@ process.on('SIGTERM', () => process.exit(0));
  * Main CLI function
  */
 async function main() {
+  // Display logo
+  await displayLogo();
+
   // Step 1: Ask for package manager
   const selectedPackageManager = await promptPackageManager();
 

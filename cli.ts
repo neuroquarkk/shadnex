@@ -295,7 +295,7 @@ async function main() {
         }
       });
       
-      if (shadcnPrompt.shadcn === undefined) {
+      if (shadcnPrompt.shadcn) {
         console.log('\n\nSetup cancelled by user.');
         process.exit(0);
       }
