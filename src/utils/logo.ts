@@ -1,5 +1,5 @@
 import kleur from 'kleur';
-import { render, renderFilled } from 'oh-my-logo';
+import { renderFilled } from 'oh-my-logo';
 
 /**
  * Display the SHADNEX logo with a horizontal gradient.
