@@ -179,12 +179,25 @@ export async function promptCustomConfig(): Promise<Partial<ProjectConfig>> {
       ],
       initial: 1,
     },
+    {
+      type: 'select',
+      name: 'license',
+      message: bullet('Which license would like to use?'),
+      choices: [
+        { title: '◆ None', value: 'none' },
+        { title: '◆ MIT', value: 'MIT' },
+        { title: '◆ Apache-2.0', value: 'Apache-2.0' },
+        { title: '◆ GPL-3.0', value: 'GPL-3.0' },
+        { title: '◆ BSD-3-Clause', value: 'BSD-3-Clause' },
+      ],
+      initial: 0,
+    },
   ], { onCancel });
 
   // Check if user cancelled
-  if (!customResponses.typescript) {
-    onCancel();
-  }
+  // if (!customResponses.typescript) {
+  //   onCancel();
+  // }
 
   return customResponses;
 }

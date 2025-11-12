@@ -20,6 +20,8 @@ import {
   promptImportAlias,
   promptShadcn
 } from './prompts/setup';
+import { getLicenseText } from "./utils/licenses";
+import { writeFileSync } from 'fs';
 
 // Handle Ctrl+C gracefully
 let isSetupCancelled = false;
@@ -58,6 +60,7 @@ async function main() {
     importAlias: 'no',
     shadcn: false,
     prettier: 'yes',
+    license: 'none',
   };
 
   if (setupChoice === 'defaults') {
@@ -121,6 +124,19 @@ async function main() {
 
   try {
     process.chdir(config.projectName);
+
+    // Create LICENSE file
+    if (config.license !== 'none') {
+      try {
+        const licenseText = getLicenseText(config.license);
+        writeFileSync('LICENSE', licenseText);
+        console.log(kleur.blue('LICENSE file create. Please edit it to fill in any required fields'));
+      } catch (error) {
+        console.log(kleur.yellow('Could not create LICENSE file'))
+        console.error(error)
+      }
+    }
+
     console.log(`\nInstalling dependencies with ${config.packageManager}...\n`);
 
     const [installCmd, installArgs] = getInstallCommand(config.packageManager);
