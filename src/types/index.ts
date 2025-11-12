@@ -12,6 +12,7 @@ export interface ProjectConfig {
   importAlias: 'yes' | 'no';
   alias?: string;
   shadcn: boolean;
+  prettier: 'yes' | 'no';
 }
 
 export type SetupChoice = 'defaults' | 'reuse' | 'customize';

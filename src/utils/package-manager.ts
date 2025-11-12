@@ -67,3 +67,19 @@ export function getCreateNextAppCommand(packageManager: PackageManager, args: st
       return ['npx', ['create-next-app@latest', ...args]];
   }
 }
+
+/*
+ * Get the add dev dependency command for each package manager
+ */
+export function getAddDevCommand(packageManager: PackageManager, packages: string[]): [string, string[]] {
+  switch (packageManager) {
+    case 'yarn':
+      return ['yarn', ['add', '-D', ...packages]];
+    case 'pnpm':
+      return ['pnpm', ['add', '-D', ...packages]];
+    case 'bun':
+      return ['bun', ['add', '-d', ...packages]];
+    default:
+      return ['npm', ['install', '-D', ...packages]];
+  }
+}

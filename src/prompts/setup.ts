@@ -68,18 +68,18 @@ export async function promptSetupChoice(): Promise<SetupChoice> {
     name: 'choice',
     message: bullet('Would you like to use the recommended Next.js defaults?'),
     choices: [
-      { 
-        title: '◆ Yes, use recommended defaults', 
+      {
+        title: '◆ Yes, use recommended defaults',
         value: 'defaults',
-        description: 'TypeScript, ESLint, Tailwind CSS, App Router, Turbopack, Shadcn UI'
+        description: 'TypeScript, ESLint, Tailwind CSS, App Router, Turbopack, Shadcn UI, Prettier'
       },
-      { 
-        title: '◆ No, reuse previous settings', 
+      {
+        title: '◆ No, reuse previous settings',
         value: 'reuse',
         description: 'Use settings from your last project'
       },
-      { 
-        title: '◆ No, customize settings', 
+      {
+        title: '◆ No, customize settings',
         value: 'customize',
         description: 'Manually configure each option'
       },
@@ -169,6 +169,16 @@ export async function promptCustomConfig(): Promise<Partial<ProjectConfig>> {
       ],
       initial: 0,
     },
+    {
+      type: 'select',
+      name: 'prettier',
+      message: bullet('Would you like to use Prettier?'),
+      choices: [
+        { title: '◆ No', value: 'no' },
+        { title: '◆ Yes', value: 'yes' },
+      ],
+      initial: 1,
+    },
   ], { onCancel });
 
   // Check if user cancelled
@@ -189,11 +199,11 @@ export async function promptImportAlias(): Promise<string> {
     message: bullet('What import alias would you like configured?'),
     initial: '@/*',
   }, { onCancel });
-  
+
   if (!response.alias) {
     onCancel();
   }
-  
+
   return response.alias;
 }
 
@@ -211,11 +221,11 @@ export async function promptShadcn(): Promise<boolean> {
     ],
     initial: 0,
   }, { onCancel });
-  
+
   if (response.shadcn === undefined) {
     onCancel();
   }
-  
+
   return response.shadcn;
 }
 

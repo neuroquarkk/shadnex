@@ -5,11 +5,12 @@ import type { ProjectConfig } from './types';
 import { run } from './utils/commands';
 import { createBox } from './utils/ui';
 import { displayLogo } from './utils/logo';
-import { 
-  getShadcnAddCommand, 
+import {
+  getShadcnAddCommand,
   getShadcnInitCommand,
   getInstallCommand,
-  getCreateNextAppCommand 
+  getCreateNextAppCommand,
+  getAddDevCommand
 } from './utils/package-manager';
 import {
   promptPackageManager,
@@ -56,6 +57,7 @@ async function main() {
     turbopack: 'yes',
     importAlias: 'no',
     shadcn: false,
+    prettier: 'yes',
   };
 
   if (setupChoice === 'defaults') {
@@ -65,7 +67,7 @@ async function main() {
     // TODO: Implement loading from previous settings
     console.log(kleur.yellow('\nReusing previous settings is not yet implemented.'));
     console.log(kleur.yellow('Falling back to customization mode...\n'));
-    
+
     // Fall through to customize mode
     const customConfig = await promptCustomConfig();
     Object.assign(config, customConfig);
@@ -111,29 +113,48 @@ async function main() {
 
   // Run create-next-app with the selected package manager
   console.log('\nCreating Next.js application...\n');
-  
+
   const [cmd, cmdArgs] = getCreateNextAppCommand(config.packageManager, args);
   run(cmd, cmdArgs);
 
   console.log('\nNext.js application created successfully!\n');
 
+  try {
+    process.chdir(config.projectName);
+    console.log(`\nInstalling dependencies with ${config.packageManager}...\n`);
+
+    const [installCmd, installArgs] = getInstallCommand(config.packageManager);
+    run(installCmd, installArgs);
+
+    console.log(`\nInstalling dev dependencies with ${config.packageManager}...\n`)
+    const devDepPackages: string[] = [];
+
+    if (config.prettier === 'yes') {
+      devDepPackages.push('prettier');
+      if (config.tailwind === 'yes') {
+        devDepPackages.push('prettier-plugin-tailwindcss');
+      }
+    }
+
+    if (devDepPackages.length > 0) {
+      const [devCmd, devArgs] = getAddDevCommand(config.packageManager, devDepPackages);
+      run(devCmd, devArgs, true); // running in silent mode
+    }
+
+  } catch (error) {
+    console.log(kleur.red('\nAn error occured while installing dependencies'))
+    process.exit(1);
+  }
+
   // Optionally run shadcn init
   if (config.shadcn) {
     // Temporarily remove SIGINT handler to allow Shadcn to handle Ctrl+C
     process.removeAllListeners('SIGINT');
-    
+
     try {
-      process.chdir(config.projectName);
-      
-      // First, install dependencies with the chosen package manager
-      console.log(`\nInstalling dependencies with ${config.packageManager}...\n`);
-      
-      const [installCmd, installArgs] = getInstallCommand(config.packageManager);
-      run(installCmd, installArgs);
-      
       // Run shadcn init with the appropriate command for each package manager
       console.log('\nInitializing Shadcn UI...\n');
-      
+
       if (config.packageManager === 'pnpm') {
         run('pnpm', ['dlx', 'shadcn@latest', 'init']);
       } else if (config.packageManager === 'bun') {
@@ -153,7 +174,7 @@ async function main() {
       console.log(`   ${getShadcnInitCommand(config.packageManager)}`);
     }
   }
-  
+
   // Display success message with useful information
   const successMessage = createBox(
     `${kleur.bold().green('Success!')} Your Next.js app is ready.\n\n` +
