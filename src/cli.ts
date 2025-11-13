@@ -142,7 +142,7 @@ async function main() {
     const [installCmd, installArgs] = getInstallCommand(config.packageManager);
     run(installCmd, installArgs);
 
-    console.log(`\nInstalling dev dependencies with ${config.packageManager}...\n`)
+    console.log(`\nInstalling dev dependencies with ${config.packageManager}...\n`);
     const devDepPackages: string[] = [];
 
     if (config.prettier === 'yes') {
