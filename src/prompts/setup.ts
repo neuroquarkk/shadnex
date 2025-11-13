@@ -182,7 +182,7 @@ export async function promptCustomConfig(): Promise<Partial<ProjectConfig>> {
     {
       type: 'select',
       name: 'license',
-      message: bullet('Which license would like to use?'),
+      message: bullet('Which license would you like to use?'),
       choices: [
         { title: '◆ None', value: 'none' },
         { title: '◆ MIT', value: 'MIT' },
