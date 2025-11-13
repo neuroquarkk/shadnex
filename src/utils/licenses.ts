@@ -1,8 +1,11 @@
+import { createRequire } from 'module';
 import type { License } from "../types";
 
-export async function getLicenseText(license: License) {
+const require = createRequire(import.meta.url);
+
+export function getLicenseText(license: License) {
   try {
-    const licenseData = await import(`spdx-license-list/licenses/${license}.json`);
+    const licenseData = require(`spdx-license-list/licenses/${license}.json`);
     const text = licenseData.licenseText || (licenseData.default && licenseData.default.licenseText);
     return text ? text.trim() : '';
   } catch (error) {
