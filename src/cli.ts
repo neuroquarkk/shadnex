@@ -158,7 +158,7 @@ async function main() {
     }
 
   } catch (error) {
-    console.log(kleur.red('\nAn error occured while installing dependencies'))
+    console.log(kleur.red(`\nAn error occured while installing dependencies: ${error instanceof Error ? error.message : String(error)}`));
     process.exit(1);
   }
 
