@@ -195,9 +195,9 @@ export async function promptCustomConfig(): Promise<Partial<ProjectConfig>> {
   ], { onCancel });
 
   // Check if user cancelled
-  // if (!customResponses.typescript) {
-  //   onCancel();
-  // }
+  if (!customResponses.typescript) {
+    onCancel();
+  }
 
   return customResponses;
 }
