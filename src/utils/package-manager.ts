@@ -68,7 +68,7 @@ export function getCreateNextAppCommand(packageManager: PackageManager, args: st
   }
 }
 
-/*
+/**
  * Get the add dev dependency command for each package manager
  */
 export function getAddDevCommand(packageManager: PackageManager, packages: string[]): [string, string[]] {
